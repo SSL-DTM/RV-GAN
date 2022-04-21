@@ -35,7 +35,9 @@ To test a model, run:
 --dataset_mode YOURDATASETNAME --crop_size 224 --epoch BEST_EPOCH --phase test`
   
 `BEST_EPOCH` is a number indicating which epoch's saved weights for the generator to use for evaluation, e.g., `75`, in order to use 
-epoch `75` weights from `checkpoint/nameOfExperiment/74_net_G.pth`
+epoch `75` weights from `checkpoint/nameOfExperiment/75_net_G.pth`
+
+The pretrained model weights for the generator in RV-GAN are available [here](https://github.com/SSL-DTM/model_weights/releases/download/v0.0.0/RVGAN.pth). It can be used for initializing and finetuning semantic segmentation model. Check out the [semantic segmentation](https://github.com/SSL-DTM/semantic_segmentation) repo for how to do this.
 
 
 
