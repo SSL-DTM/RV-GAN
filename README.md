@@ -24,15 +24,13 @@ on your own dataset:
 - `conda activate ikg`
 
 To train a model, edit the `options/base_options.py` and `options/train_options.py` file and run the following code for example:
-- `python train_v2.py --name nameOfExperiment --model pix2pix --netG hrnet --netD basic --direction AtoB --lambda_L1 100 \
---dataset_mode YOURDATASETNAME --norm batch --pool_size 0 --gan_mode lsgan --gpu_ids 0,1,2,3 --batch_size 256`
+- `python train_v2.py --name nameOfExperiment --model pix2pix --netG hrnet --netD basic --direction AtoB --lambda_L1 100 --dataset_mode YOURDATASETNAME --norm batch --pool_size 0 --gan_mode lsgan --gpu_ids 0,1,2,3 --batch_size 256`
   
 This saves the model history and weights under `checkpoint/nameOfExperiment`
 
 
 To test a model, run:
-- `python evaluate_v2.py --name nameOfExperiment --model pix2pix --netG hrnet --direction AtoB \
---dataset_mode YOURDATASETNAME --crop_size 224 --epoch BEST_EPOCH --phase test`
+- `python evaluate_v2.py --name nameOfExperiment --model pix2pix --netG hrnet --direction AtoB --dataset_mode YOURDATASETNAME --crop_size 224 --epoch BEST_EPOCH --phase test`
   
 `BEST_EPOCH` is a number indicating which epoch's saved weights for the generator to use for evaluation, e.g., `75`, in order to use 
 epoch `75` weights from `checkpoint/nameOfExperiment/75_net_G.pth`
